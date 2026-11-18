@@ -1,0 +1,26 @@
+{
+  "client": "demo-landscaping",
+  "currency": "USD",
+  "items": [
+    { "id": "base", "label": "Base setup", "amount": 300, "quantity": 1 },
+    { "id": "page", "label": "Extra page", "amount": 75, "max": 10 },
+    { "id": "design", "label": "Custom design session", "amount": 250, "when": "service == 'Landscaping design'" }
+  ],
+  "multipliers": [
+    { "id": "rush", "when": "timeline == 'ASAP'", "factor": 1.25, "label": "Rush delivery" }
+  ],
+  "exclusions": [
+    "Permits and municipal fees",
+    "Soil testing",
+    "Irrigation system installation"
+  ],
+  "assumptions": [
+    "Site is accessible by standard equipment",
+    "Quote is valid for 30 days"
+  ],
+  "email_alert": {
+    "enabled": true,
+    "to": "owner@example.com",
+    "subject": "New quote request — {{client}}"
+  }
+}
