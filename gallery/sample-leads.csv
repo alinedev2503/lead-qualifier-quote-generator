@@ -1,0 +1,9 @@
+created_at,name,email,phone,band,score,quote_total,service,timeline,sink
+2026-11-19T19:20:05.468Z,Alex Morgan,alex.morgan@example.com,+1 512 555 0110,hot,92,1215,design,asap,local
+2026-11-19T19:20:05.486Z,Priya Shah,priya.shah@example.com,,warm,66,395,lawn,two_weeks,local
+2026-11-19T19:20:05.505Z,Daniel Kim,daniel.kim@example.com,+1 512 555 0188,hot,84,1170,tree,two_months,local
+2026-11-19T19:20:05.522Z,Sofia Rossi,sofia.rossi@example.com,,cold,36,940,irrigation,researching,local
+2026-11-19T19:20:05.538Z,Emma Davis,emma.davis@example.com,,warm,53,690,design,two_months,local
+2026-11-19T19:20:05.554Z,Jordan Blake,jordan.blake@example.com,+1 512 555 0177,hot,92,1215,design,asap,local
+2026-11-19T19:20:05.575Z,Taylor Reed,taylor.reed@example.com,+1 512 555 0199,hot,71,533,lawn,two_weeks,local
+2026-11-19T19:20:05.596Z,Morgan Ellis,morgan.ellis@example.com,+1 512 555 0166,hot,90,1024,tree,asap,local

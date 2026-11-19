@@ -6,8 +6,12 @@ produces an instant, clearly explained estimate based on the business's own
 pricing rules. Every submission is written to a Google Sheet owned by the client.
 
 > Portfolio repository for **Upwork Project B — Lead qualifier / quote generator**.
-> The code is being prepared now; the gallery (mobile + desktop prints, sample
-> leads sheet and a 45–60 s video) will be added only after the demo is ready.
+> The working demo is built and documented in
+> [docs/DEMO.md](docs/DEMO.md); screenshots and the 50-second walkthrough are in
+> [`gallery/`](gallery/). The application source is delivered to the client with
+> the project and is not published here.
+
+![Landing page, desktop and mobile](gallery/01-hero.png)
 
 ---
 
@@ -44,13 +48,32 @@ explains them. The same applies to scoring: weights are explicit and auditable.
 
 ---
 
-## Planned stack
+## Demo
+
+Built with a fictional client, **GreenEdge Landscaping**, at the Advanced tier.
+
+| | |
+|---|---|
+| ![Question flow](gallery/02-flow.png) | ![Score and quote](gallery/03-result.png) |
+| ![Lead dashboard](gallery/04-dashboard.png) | ![Leads in Google Sheets](gallery/06-leads-sheet.png) |
+
+- **Walkthrough video (50 s):** [`gallery/demo-walkthrough.mp4`](gallery/demo-walkthrough.mp4)
+- **Sample leads:** [`gallery/sample-leads.csv`](gallery/sample-leads.csv)
+- **Full description, scoring example and shot list:** [docs/DEMO.md](docs/DEMO.md)
+
+Example from the demo: *landscape design · medium property · as soon as
+possible · $2,000–$10,000 · decision maker · referral* → **92/100, hot** and a
+**$1,215** estimate built from the price rules.
+
+---
+
+## Stack
 
 - React 19 + TypeScript + Vite 8
 - Tailwind CSS 4 + Lucide icons
 - Node.js + Express proxy for `@google/genai` (API key stays server-side)
-- Google Sheets API via service account (JWT, no SDK) — with local JSONL fallback
-- PWA install support and branded theme tokens
+- Google Sheets API via service account (JWT, no SDK) — with local JSONL/CSV fallback
+- Shadow-DOM embeddable widget, plus a direct link
 
 ## Reused patterns
 
@@ -67,13 +90,15 @@ of starting from zero:
 ## Repository layout
 
 ```
-docs/ARCHITECTURE.md            design decisions and data flow
-examples/questions.example.json 5–8 question flow (Starter)
+docs/DEMO.md                     the built demo: screenshots, scoring, shot list
+docs/ARCHITECTURE.md             design decisions and data flow
+gallery/                         screenshots, sample leads CSV, walkthrough video
+examples/questions.example.json  5–8 question flow (Starter)
 examples/pricing-rules.example.json explicit price rules (Standard)
-.env.example                    required environment variables
+.env.example                     required environment variables
 ```
 
-## Quickstart
+## Configuration
 
 ```bash
 npm install
@@ -82,6 +107,8 @@ npm run dev
 ```
 
 Configure `SHEET_ID` and `GOOGLE_SERVICE_ACCOUNT` to persist leads, or leave
-`LEAD_SINK=local` for a demo that writes to `data/leads.jsonl`.
+`LEAD_SINK=local` for a demo that writes to `data/leads.jsonl`. Set
+`PUBLIC_ORIGIN` to the deployed URL so the embed snippet shows the real domain.
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full design.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the design and
+[docs/DEMO.md](docs/DEMO.md) for the built demo.
